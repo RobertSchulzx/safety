@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    const char * const a[2] = {"good","morning"}; // a is an array of const pointers to const char.
+
+    const char * const * b = a;   // b is a pointer to const pointer to const `char`.
+
+    //a[0] = "hello";       not possible because of const pointer a[0].
+    //a[1] = "world";       not possible because of const pointer a[1].
+
+    //*b = "hello";         not possible because of pointer to const pointer b.
+    //b[0] = "hello";       not possible because of pointer to const pointer b.
+    //b[1] = "world";       not possible because of pointer to const pointer b.
+
+    printf("%s %s",a[0],b[1]);
+}
